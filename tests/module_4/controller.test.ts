@@ -52,7 +52,8 @@ describe('Creating controllers', () => {
     it('should save the response on a books variable with IBook type', (done) => {
       try {
         expect(controller)
-          .toContain('const books: IBook[]')
+          //.toContain('const books: IBook[]')
+          .toContain('const books')
         done();
       } catch (error) {
         done(new Error('No books variable with IBook type detected'));
@@ -111,7 +112,8 @@ describe('Creating controllers', () => {
     it('should save the response on a book variable with IBook type', (done) => {
       try {
         expect(controller)
-          .toContain('const book: IBook')
+        //.toContain('const book: IBook')
+          .toContain('const book')
         done();
       } catch (error) {
         done(new Error('No book variable with IBook type detected'));
@@ -129,7 +131,7 @@ describe('Creating controllers', () => {
     it('should return the response in a json', (done) => {
       try {
         expect(controller)
-          .toContain('.json({ book })')
+          .toContain('.json(book)')
         done();
       } catch (error) {
         done(new Error('No json response detected'));
